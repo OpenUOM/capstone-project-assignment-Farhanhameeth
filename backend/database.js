@@ -70,10 +70,10 @@ const updateTeacher = async (name, age, id) => {
         knex_db
             .raw(sql, [name, age, id])
             .then(() => {
-                resolve(data);
+                resolve({status: "Successfully updated Teacher"});
             })
             .catch((error) => {
-                reject({status: "Successfully updated Teacher"});
+                reject(error);
             });
     });
 }
